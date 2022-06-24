@@ -1,6 +1,258 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+          $(function () {
+        $("input[name='Status']").click(function () {
+            if ($("#chkYes").is(":checked")) {
+                $("#txtmarried").removeAttr("disabled");
+                $("#txtmarried").focus();
+            } else {
+                $("#txtmarried").attr("disabled", "disabled");
+            }
+        });
+    });
+  </script>
+<script type="text/javascript">
+var x = 0;
+var array = Array();
+
+function add_element_to_array()
+{
+ array[x] = document.getElementById("text1").value;
+ alert("Name " + array[x] + " Added at index " + x);
+ x++;
+ document.getElementById("text1").value = "";
+}
+
+function display_array()
+{
+   var e = "<hr/>";  
+   
+   for (var y=0; y<array.length; y++)
+   {
+     e += "Name = " + array[y] + "<br/>";
+   }
+   document.getElementById("Result").innerHTML = e;
+}
+/////////
+function add_element_to_array()
+{
+ array[x] = document.getElementById("text2").value;
+ alert("LastName " + array[x] + " Added at index " + x);
+ x++;
+ document.getElementById("text2").value = "";
+}
+
+function display_array()
+{
+   var e = "<hr/>";  
+   
+   for (var y=0; y<array.length; y++)
+   {
+     e += "LastName = " + array[y] + "<br/>";
+   }
+   document.getElementById("Result").innerHTML = e;
+}
+/////
+function add_element_to_array()
+{
+ array[x] = document.getElementById("text2").value;
+ alert("Gender " + array[x] + " Added at index " + x);
+ x++;
+ document.getElementById("text3").value = "";
+}
+
+function display_array()
+{
+   var e = "<hr/>";  
+   
+   for (var y=0; y<array.length; y++)
+   {
+     e += "Gender = " + array[y] + "<br/>";
+   }
+   document.getElementById("Result").innerHTML = e;
+}
+/////
+function add_element_to_array()
+{
+ array[x] = document.getElementById("text4").value;
+ alert("Other Details " + array[x] + " Added at index " + x);
+ x++;
+ document.getElementById("text4").value = "";
+}
+
+function display_array()
+{
+   var e = "<hr/>";  
+   
+   for (var y=0; y<array.length; y++)
+   {
+     e += "Other Details = " + array[y] + "<br/>";
+   }
+   document.getElementById("Result").innerHTML = e;
+}
+
+
+
+</script>
+<script type="text/javascript">
+         // function validateForm() {
+          //   var x = document.forms["content"]["fname"].value;
+          //   if (x == "" || x == null) {
+          //     alert("Name must be filled out");
+          //     return false;
+          //   var y = document.forms["content"]["lname"].value;
+          //   if (y == "" || x == null) {
+          //     alert("Last Name must be filled out");
+          //     return false;
+          //   }
+          // }
+          function myFunction() {
+  document.getElementById("xyz").reset();
+}
+function isDate(ExpiryDate) { 
+    var objDate,  // date object initialized from the ExpiryDate string 
+        mSeconds, // ExpiryDate in milliseconds 
+        day,      // day 
+        month,    // month 
+        year;     // year 
+    // date length should be 10 characters (no more no less) 
+    if (ExpiryDate.length !== 10) { 
+        return false; 
+    } 
+    // third and sixth character should be '/' 
+    if (ExpiryDate.substring(2, 3) !== '/' || ExpiryDate.substring(5, 6) !== '/') { 
+        return false; 
+    } 
+    // extract month, day and year from the ExpiryDate (expected format is mm/dd/yyyy) 
+    // subtraction will cast variables to integer implicitly (needed 
+    // for !== comparing) 
+    month = ExpiryDate.substring(0, 2) - 1; // because months in JS start from 0 
+    day = ExpiryDate.substring(3, 5) - 0; 
+    year = ExpiryDate.substring(6, 10) - 0; 
+    // test year range 
+    if (year < 1000 || year > 3000) { 
+        return false; 
+    } 
+    // convert ExpiryDate to milliseconds 
+    mSeconds = (new Date(year, month, day)).getTime(); 
+    // initialize Date() object from calculated milliseconds 
+    objDate = new Date(); 
+    objDate.setTime(mSeconds); 
+    // compare input date and parts from Date() object 
+    // if difference exists then date isn't valid 
+    if (objDate.getFullYear() !== year || 
+        objDate.getMonth() !== month || 
+        objDate.getDate() !== day) { 
+        return false; 
+    } 
+    // otherwise return true 
+    return true; 
+}
+
+function checkDate(){ 
+    // define date string to test 
+    var ExpiryDate = document.getElementById(' ExpiryDate').value; 
+    // check date and print message 
+    if (isDate(ExpiryDate)) { 
+        alert('OK'); 
+    } 
+    else { 
+        alert('Invalid date format!'); 
+    } 
+}
+   
+    function registration()
+  {
+
+    var name= document.getElementById("t1").value;
+    var email= document.getElementById("t2").value;
+    var uname= document.getElementById("t3").value;
+    var pwd= document.getElementById("t4").value;    
+    var cpwd= document.getElementById("t5").value;
+   
+        //email id expression code
+    var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+    var letters = /^[A-Za-z]+$/;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if(name=='')
+    {
+      alert('Please enter your name');
+    }
+    else if(!letters.test(name))
+    {
+      alert('Name field required only alphabet characters');
+    }
+    else if(lastname==''){
+      alert('Please enter your Lastname');
+    }
+    else if(!letters.test(lastname))
+    {
+      alert('Name field required only alphabet characters');
+    }
+    if ( ( form.gender[0].checked == false ) && ( form.gender[1].checked == false ) )
+{
+alert ( "Please choose your Gender: Male or Female" );
+return false;
+}
+
+    else if(email=='')
+    {
+      alert('Please enter your user email id');
+    }
+    else if (!filter.test(email))
+    {
+      alert('Invalid email');
+    }
+    else if(uname=='')
+    {
+      alert('Please enter the user name.');
+    }
+    else if(!letters.test(uname))
+    {
+      alert('User name field required only alphabet characters');
+    }
+    else if(pwd=='')
+    {
+      alert('Please enter Password');
+    }
+    else if(cpwd=='')
+    {
+      alert('Enter Confirm Password');
+    }
+    else if(!pwd_expression.test(pwd))
+    {
+      alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+    }
+    else if(pwd != cpwd)
+    {
+      alert ('Password not Matched');
+    }
+    else if(document.getElementById("t5").value.length < 6)
+    {
+      alert ('Password minimum length is 6');
+    }
+    else if(document.getElementById("t5").value.length > 12)
+    {
+      alert ('Password max length is 12');
+    }
+    else
+    {                                  
+               alert('Thank You for Login & You are Redirecting to  Zeus Systems Private Limited ');
+         // Redirecting to other page or webste code.
+         window.location = "http:// www.Zeus Systems Private Limited";
+    }
+  }
+  
+  
+   
+    </script>
+    </head>
+
 <style>
 table, th, td {
   border: 1px solid black;
@@ -14,8 +266,8 @@ width:200px;
 </head>
 <body>
 
-<center>
-  <form>
+</body>
+  <center><form method="post" onSubmit="alert('Thank you for your feedback.');" id="xyz" name="content">
 <table style="width:35%">
   <tr>
     <td>
@@ -23,15 +275,16 @@ width:200px;
     </td>
   <tr>
     <td>First Name</td>
-    <td><input type="text" value="" size="32" style="background-color: yellow"></td>
+    <td><input type="text" id="text1" size="32" name="fname" style="background-color: yellow" method="post" required></td>
+
   </tr>
   <tr>
     <td>Last Name</td>
-    <td><input type="text" value="" size="32" style="background-color: yellow"></td>
+    <td><input type="text" id="text2" value="" size="32" name="lname" onsubmit="return validateForm()" style="background-color: yellow" method="post" required></td>
   </tr>
   <tr>
     <td>Gender</td>
-    <td><input type="radio" name="male"/> MALE <input type="radio" name="male"/> FEMALE</td>
+    <td><input type="radio" id="text3" name="male"/> MALE <input type="radio" name="male"/> FEMALE</td>
   </tr>
   <tr>
     <td>Hobbies</td>
@@ -44,41 +297,87 @@ width:200px;
     <td>Highest Education</td>
     <td><select>  
         <option value="Masters">Masters</option>  
-        <option value="BBA">BBA</option>  
-        <option value="B.Tech">B.Tech</option>  
-        <option value="MBA">MBA</option>  
-        <option value="MCA">MCA</option>  
-        <option value="M.Tech">M.Tech</option>  
-        </select></td>
+        <option value="Bachelors">Bachelors</option>  
+        <option value="High School">High School </option>  
+        <option value="None of these">None of these</option>  
+</select></td>
   </tr>
   <tr>
     <td>Skillset</td>
-    <td><div style="height:75px;width:90px;overflow:auto;color:black;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">C++ <br>
-      HMTL <br> Java<br> C#.NET<br> PHP <br> Javascript <br></div></td>
+        <td>
+        <select onfocus='this.size=3;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option>C++</option>
+        <option>HTML</option>
+        <option>PHP</option>
+        <option>SQL</option>
+        <option>Java</option>
+
+    </select>
+    </td>
   </tr>
   <tr>
     <td>Marital Status</td>
-    <td><input type="radio" name="married"/> Married <input type="radio" name="unmarried"/> Unmarried</td>
+    <td><label for="chkYes"><input type="radio" name="Status" value="mar" id="chkYes"/> Married
+        </label>
+        <label for="chkNo">
+        <input type="radio" name="Status" value="unmar" id="chkNo"/> Unmarried
+        </label>
+    </td>
   </tr>
   <tr>
     <td>Name of Spouce</td>
-    <td><input type="text" value="" size="32"></td>
+    <td><input type="text" id="txtmarried" disabled="disabled" size="32" required></td>
   </tr>
   <tr>
     <td>Other Details</td>
-    <td><div style="height:75px;width:90px;overflow:auto;color:black;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;"><br><br><br><br><br><br></div></td>
+    <td>
+        <select onfocus='this.size=3;' onblur='this.size=1;' onchange='this.size=1; this.blur();' id="text4">
+        <option>I like Java</option>
+        <option>I like C</option>
+        <option>I like SQL</option>
+        <option>I like .net</option>
+        <option>I like C#</option>
+        <option>I like Mango</option>
+        <option>I like Apple</option>
+    </select>
+    </td>
+  </tr>
+  <td align="right">Enter Email ID :</td>
+  <td><input type="text" placeholder="Enter Email ID here" id="t2" class="tb" /></td>
   </tr>
   <tr>
-    <th><input type="reset" value="Reset"></th>
-    <th><input type="submit" value="Submit"></th>
+  <td align="right">Enter Username :</td>
+  <td><input type="text" placeholder="Enter Username here" id="t3" class="tb" /></td>
   </tr>
+  <tr>
+  <td align="right">Enter Password :</td>
+  <td><input type="password" placeholder="Enter Password here" id="t4" class="tb" /></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Confirm Password :</td>
+  <td><input type="password" placeholder="Enter Password here" id="t5" class="tb" /></td>
+  </tr>
+  <tr>
+  <td></td>
+
+
+  <tr>
+    <th><input type="reset" value="Reset"></th>
+    <th><input type="submit" value="Submit"  onclick="add_element_to_array();"></th>
+  </tr>
+
   <table style="width: 35%">
     <td>
+     
   <center><p>Copyright @2001-2015 <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">Zeus Systems Private Limited</a></p></center>
   </td>
   </table>
   </tr>
 </table>
+<center>
+  <input type="button" id="button2" value="View" onclick="display_array();"></input>
+  <div id="Result"></div>
+  </center>
 </form>
 </center>
 
