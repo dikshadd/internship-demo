@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <head>
+    </head>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+.divScroll {
+overflow:scroll;
+height:100px;
+width:200px;
+}
+</style>
+</head>
+<body>
+
+</body>
+  <center><form method="post" onSubmit="alert('Thank you for your feedback.');" id="xyz" name="content">
+<table style="width:35%">
+  <tr>
+    <td>
+      <img src="ze.png" height="150px">
+    </td>
+  <tr>
+    <td>First Name</td>
+    <td><input type="text" id="text1" size="32" name="fname" style="background-color: yellow" method="post" required></td>
+
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td><input type="text" id="text2" value="" size="32" name="lname" onsubmit="return validateForm()" style="background-color: yellow" method="post" required></td>
+  </tr>
+  <tr>
+
+      <td>Gender</td>
+      <td><label for="chkYes1"><input type="radio" name="Gender" value="male" id="chkYes1"required/> male
+          </label>
+          <label for="chkNo1">
+          <input type="radio" name="Gender" value="female" id="chkNo1"required/> female
+          </label>
+      </td>
+        
+  </tr>
+  <tr>
+    <td>Hobbies</td>
+    <td>
+      <input type="checkbox" name="hobby" value="Writing" id="Writing">
+      <label for="Writing">Writing</label><br>
+      <input type="checkbox" name="hobby" value="music" id="music">
+      <label for="music">Music</label><br>
+      <input type="checkbox" name="hobby" value="reading" id="read">
+      <label for="read">Reading</label>
+
+ </td>
+
+  </tr>
+  <tr>
+    <td>Highest Education</td>
+    <td><select>  
+        <option value="Masters">Masters</option>  
+        <option value="Bachelors">Bachelors</option>  
+        <option value="High School">High School </option>  
+        <option value="None of these" aria-required="false">None of these</option>  
+</select></td>
+  </tr>
+  <tr>
+    <td>Skillset</td>
+        <td>
+        <select onfocus='this.size=3;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        <option>C++</option>
+        <option>HTML</option>
+        <option>PHP</option>
+        <option>SQL</option>
+        <option>Java</option>
+
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Marital Status</td>
+    <td><label for="chkYes"><input type="radio" name="Status" value="mar" id="chkYes"/> Married
+        </label>
+        <label for="chkNo">
+        <input type="radio" name="Status" value="unmar" id="chkNo"required/> Unmarried
+        </label>
+    </td>
+  </tr>
+  <tr>
+    <td>Name of Spouce</td>
+    <td><input type="text" id="txtmarried" disabled="disabled" size="32" required></td>
+  </tr>
+  <tr>
+    <td>Other Details</td>
+
+    <td>
+        <select onfocus='this.size=3;id="other Details"' onblur='this.size=1;' onchange='this.size=1; this.blur();' id="text4">
+        <option>I like Java</option>
+        <option>I like C</option>
+        <option>I like SQL</option>
+        <option>I like .net</option>
+        <option>I like C#</option>
+        <option>I like Mango</option>
+        <option>I like Apple</option>
+    </select>
+    </td>
+  </tr>
+  <td align="right">Enter Email ID :</td>
+  <td><input type="text" placeholder="Enter Email ID here" id="t2" class="tb" pattern="[^ @]*@[^ @]*"
+     placeholder="Enter your email"required/></td>
+  </tr>
+  <div class="pass">
+
+    <tr>
+  <td align="right">Enter Password :</td>
+  <td><input type="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Confirm Password :</td>
+  <td><input type="password" type="password" name="confirm_pass"id="confirm_pass" class="tb" onkeyup="validate_password()"required /></td>
+  </tr>
+    </div>
+<span id="wrong_pass_alert"></span>
+<div class="buttons">
+  <tr>
+  </td>
+<tr>
+    <td align="right">Date</td>
+    <td><input type="text" id="t5" class="tb" required pattern="\d{4}-\d{2}-\d{2}" placeholder="yyyy-mm-dd"required/></td>
+    </tr>
+  <tr>
+    <th><input type="reset" value="Reset"></th>
+    <th><input type="submit" value="Submit" id="test" required></th>
+  </tr>
+
+  <table style="width: 35%">
+    <td>
+     
+  <center><p>Copyright @2001-2015 <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">Zeus Systems Private Limited</a></p></center>
+  </td>
+ </tr>
+</table>
+<center>
+  <input type="button" id="button2" value="View" ></input>
+  <div id="Result"></div>
+  </center>
+</form>
+</center>
+
+</body>
+</html>
+
